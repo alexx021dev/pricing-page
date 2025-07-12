@@ -1,0 +1,145 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: sans-serif;
+    margin-top: 50px;
+}
+.toggle-label {
+    color: #aaa;
+    font-weight: 500;
+}
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #8b7bfa;
+    border-radius: 34px;
+    height: 100%;
+    width: 100%;
+    transition: 0.4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+input:checked+.slider::before {
+    transform: translateX(24px);
+}
+.price-month {
+    display: none;
+}
+body:has(#billing-toggle:checked) .price-annual {
+    display: none;
+}
+body:has(#billing-toggle:checked) .price-month {
+    display: inline;
+}
+
+.cards {
+    width: 90%;
+    max-width: 320px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2rem auto;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0,0.4);
+    border: 1px solid grey;
+    border-radius: 0.4rem; 
+    transition: transform 0.3s ease-in-out;  
+}
+.cards:nth-of-type(2){
+    background-color: hsl(238, 63%, 64%);
+}
+input:checked+.price-month {
+    display: inline;
+}
+.cards:hover {
+ transform: scale(1.02);
+}
+.features {
+    width: 90%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    border-top: 1px solid grey;
+    text-align: center;
+    font-size: 1.1rem;  
+} 
+.features li {
+    border-bottom: 1px solid grey;
+    line-height: 2rem;
+    padding: 0.5rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.card-btn {
+    background-color: hsl(238, 63%, 64%);
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    width: 90%;
+    text-align: center;
+}
+.cards:nth-of-type(2) .card-btn {
+    background-color: #fff;
+}
+.cards:nth-of-type(2) .card-btn:hover {
+    background-color: #8b7bfa;
+}
+.card-btn:hover {
+    background-color: blue;
+}
+.main-title {
+    text-align: center;
+    opacity: 0.7;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+    opacity: 0.7;
+}
+.price-annual, .price-month {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+@media(min-width: 1440px) {
+    .Pricing {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+    }
+    .cards {
+        max-width: 80%;
+    }
+}
