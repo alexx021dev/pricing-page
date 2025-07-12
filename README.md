@@ -7,9 +7,7 @@ This is a solution to the [Frontend Mentor](https://www.frontendmentor.io/) chal
 ---
 
 ## 🔗 Live Demo
-
-<!-- Replace this link with your live deployment URL once ready -->
-Coming soon...
+https://alexx021dev.github.io/pricing-page/
 
 ---
 
